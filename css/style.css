@@ -1,0 +1,323 @@
+@font-face {
+    font-family: "SFUI";
+    src: url(../fonts/SFUIText-Light.ttf);
+  }
+  @font-face {
+    font-family: "SFUI-reg";
+    src: url(../fonts/SFUIDisplay-Regular.ttf);
+  }
+  @font-face {
+    font-family: "SFUI-med";
+    src: url(../fonts/SFUIDisplay-Medium.ttf);
+  }
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e2e2e2;
+    /* background: #0d0d0d; */
+    overflow: hidden;
+}
+
+.clock-slider {
+    width: 525px;
+    height: 550px;
+    overflow: hidden;
+    display: block;
+    justify-content: space-between;
+}
+
+.clock-block {
+    width: 1750px;
+    height: 525px;
+    display: flex;
+    justify-content: space-between;
+    transform: translateX(0);
+    transition: 0.7s ease-in-out;
+}
+
+.clock-bg {
+    width: 525px;
+    height: 525px;
+    background: #000;
+    border-radius: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.clock {
+    width: 460px;
+    height: 460px;
+    border-radius: 50%;
+    background: #fff;
+    position: relative;
+}
+
+.clock .h {
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    border-radius: 20px;
+    transform-origin: bottom;
+    background-color: #000;
+    z-index: 99;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.clock::after {
+    content: '';
+    position: absolute;
+    background-color: #000;
+    z-index: 100;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.clock .h.second {
+    width: 5px;
+    height: 48%;
+    background-color: #f28700;
+    z-index: 999;
+}
+
+.clock .h.minute {
+    width: 10px;
+    height: 45%;
+}
+
+.clock .h.hour {
+    width: 15px;
+    height: 35%;
+}
+
+.n {
+    font-family: 'SFUI-med';
+    font-size: 4rem;
+    position: absolute;
+}
+
+.n1 {
+    top: 6%;
+    right: 25%;
+}
+
+.n2 {
+    top: 22%;
+    right: 8%;
+}
+
+.n3 {
+    top: 50%;
+    right: 2%;
+    transform: translateY(-50%);
+}
+
+.n4 {
+    bottom: 22%;
+    right: 8%;
+}
+
+.n5 {
+    bottom: 6%;
+    right: 25%;
+}
+
+.n6 {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.n7 {
+    bottom: 6%;
+    left: 25%;
+}
+
+.n8 {
+    bottom: 22%;
+    left: 8%;
+}
+
+.n9 {
+    top: 50%;
+    left: 2%;
+    transform: translateY(-50%);
+}
+
+.n10 {
+    top: 22%;
+    left: 8%;
+}
+
+.n11 {
+    top: 6%;
+    left: 23%;
+}
+
+.n12 {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dig-clock-bg {
+    width: 525px;
+    height: 525px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dig-clock {
+    width: 480px;
+    height: 100px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 20px;
+    border-radius: 45px;
+}
+
+.time {
+    font-size: 100px;
+    font-family: 'SFUI-med';
+}
+
+.timer {
+    width: 525px;
+    height: 525px;
+}
+
+.times {
+    display: flex;
+    margin: 100px auto;
+    width: 460px;
+    height: 100px;
+    align-items: center;
+    font-family: 'SFUI-reg';
+    font-size: 30px;
+    background: #fff;
+    border-radius: 30px;
+    padding: 20px 10px;
+}
+
+.times p {
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    width: 75px;
+    margin: 0 auto;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: 'SFUI-reg';
+    font-size: 50px;
+    text-align: right;
+}
+
+input:disabled {
+    color: #000;
+    font-size: 80px;
+    width: 110px;
+}
+
+.btns {
+    display: flex;
+}
+
+.btn {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 25px;
+}
+
+.btn.cancel {
+    border: 3px solid #ffffff80;
+    background: #2d2d2d86;
+}
+
+.btn.cancel:disabled {
+    border: 3px solid #ffffff80;
+    background: #2d2d2d86;
+    opacity: 0.3;
+    cursor: auto;
+}
+
+.btn.start {
+    display: none;
+}
+
+.btn.start.active {
+    border: 3px solid #4bff0480;
+    background: #24800086;
+    color: #4bff04;
+    display: block;
+}
+
+.btn.resume {
+    display: none;
+}
+
+.btn.resume.active {
+    border: 3px solid #4bff0480;
+    background: #24800086;
+    color: #4bff04;
+    display: block;
+}
+
+.btn.pause {
+    display: none;
+}
+
+.btn.pause.active {
+    border: 3px solid #ff910080;
+    background: #80490086;
+    color: #ff9100;
+    display: block;
+}
+
+.indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.indicator1,
+.indicator2,
+.indicator3 {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #2d2d2d;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.indicator1.active,
+.indicator2.active,
+.indicator3.active {
+    background: #2d2d2d5d;
+    transition: 0.3s ease;
+}
+
+.indicator1,
+.indicator2 {
+    margin-right: 10px;
+}

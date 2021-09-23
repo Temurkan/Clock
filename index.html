@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="img/clock.png" />
+    <title>Clock</title>
+  </head>
+  <body>
+    <audio src="ring/radar.mp3"></audio>
+    <div class="clock-slider">
+      <div class="clock-block">
+        <!-- Analog clock -->
+        <div class="clock-bg">
+          <div class="clock">
+            <div class="h hour" data-hour-hand></div>
+            <div class="h minute" data-minute-hand></div>
+            <div class="h second" data-second-hand></div>
+            <div class="n n1">1</div>
+            <div class="n n2">2</div>
+            <div class="n n3">3</div>
+            <div class="n n4">4</div>
+            <div class="n n5">5</div>
+            <div class="n n6">6</div>
+            <div class="n n7">7</div>
+            <div class="n n8">8</div>
+            <div class="n n9">9</div>
+            <div class="n n10">10</div>
+            <div class="n n11">11</div>
+            <div class="n n12">12</div>
+          </div>
+        </div>
+        <!-- Digital clock -->
+        <div class="dig-clock-bg">
+          <div class="dig-clock">
+            <p class="time hour-num"></p>
+            <p class="time min-num"></p>
+            <p class="time sec-num"></p>
+          </div>
+        </div>
+        <!-- Timer  -->
+        <div class="timer">
+            <div class="times">
+                <input class="timer-hour" type="number" min="0" max="23" value="0" />
+                <p class="tim-hour">hours</p>  
+                <input class="timer-min" type="number" min="0" max="59" value="15"/>
+                <p class="tim-min">min</p>  
+                <input class="timer-sec" type="number" min="0" max="59" value="0"/>
+                <p class="tim-sec">sec</p>  
+              </div>          
+            <div class="btns">
+                <button class="btn cancel" disabled>Cancel</button>
+                <button class="btn start active">Start</button>
+                <button class=" btn pause">Pause</button>
+                <button class=" btn resume">Resume</button>
+            </div>          
+        </div>
+      </div>
+      <div class="indicators">
+        <div class="indicator1 active"></div>
+        <div class="indicator2"></div>
+        <div class="indicator3"></div>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
